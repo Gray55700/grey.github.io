@@ -1,164 +1,200 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactez-nous</title>
+    <title>Cours en Ligne</title>
     <style>
-        /* Votre CSS ici */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
-
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
             text-align: center;
         }
-
-        main {
-            padding: 1em;
-        }
-
-        form {
-            max-width: 600px;
+        .container {
+            width: 80%;
             margin: 0 auto;
-            background: white;
-            padding: 1em;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 0.5em;
-        }
-
-        input {
-            width: 100%;
-            padding: 0.5em;
-            margin-bottom: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 1em;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        #confirmation-message {
+        h1 {
             text-align: center;
-            margin-top: 1em;
-            font-size: 1.2em;
-            color: green;
         }
-
-        .hidden {
+        .chapter {
+            margin-bottom: 20px;
+        }
+        .chapter h2 {
+            color: #333;
+        }
+        .chapter p {
+            margin: 10px 0;
+        }
+        .subscribe {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .subscribe a {
+            background-color: #4267B2;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .course-content {
             display: none;
+            margin-top: 10px;
         }
-
-        #toggle-password {
-            background-color: transparent;
+        .show-course-btn {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
-            padding: 0;
-            font-size: inherit;
-            color: #007bff; /* Couleur du lien par défaut de Bootstrap */
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Recevoir votre connexion internet gratuit par email !</h1>
+        <h1>Cours HTML en ligne</h1>
     </header>
-    <main>
-        <form id="contact-form">
-            <label for="first-name">Prénom:</label>
-            <input type="text" id="first-name" name="first-name" required>
-
-            <label for="last-name">Nom:</label>
-            <input type="text" id="last-name" name="last-name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="button" id="toggle-password">Afficher</button>
-
-            <label for="phone">Numéro de téléphone:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <button type="submit">Envoyer</button>
-        </form>
-        <div id="confirmation-message" class="hidden">
-            Merci pour vos coordonnées. Vous serez contacté bientôt.
+    <div class="container">
+        <div id="subscribe-message" class="subscribe">
+            <p>Veuillez vous abonner à notre page Facebook :</p>
+            <a href="https://www.facebook.com/profile.php?id=61559920082375" target="_blank">S'abonner sur notre page web ! </a>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2024 Contactez-nous </p>
-    </footer>
+        <div id="course-content" style="display: none;">
+            <h1>Bienvenue dans le Cours HTML en Ligne</h1>
+            <div class="chapter">
+                <h2>Chapitre 1: Introduction</h2>
+                <button class="show-course-btn" onclick="showCourse(1)">Afficher le cours</button>
+                <div id="course-1" class="course-content">
+                    <p> Introduction HTML est la première partie d'une page HTML et elle fournit des informations de base sur la page, comme son type, sa langue, son encodage, et son titre. Cela permet aux navigateurs web de comprendre comment interpréter et afficher le contenu de la page de manière appropriée..</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 2: Concepts de Base</h2>
+                <button class="show-course-btn" onclick="showCourse(2)">Afficher le cours</button>
+                <div id="course-2" class="course-content">
+                    <p>Concepts de base en HTML :
 
-    <!-- Load EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("J_HqL0M_ckPVmnemo"); // Remplacez par votre user ID EmailJS
-        })();
-    </script>
+1. **Balises**: Les balises sont des éléments utilisés pour délimiter et structurer le contenu de la page. Elles sont généralement composées d'une balise d'ouverture, du contenu et d'une balise de fermeture. Par exemple : `<p>Contenu du paragraphe</p>`.
+
+2. **Éléments**: Les éléments sont constitués de balises et de leur contenu. Ils peuvent être des éléments de texte comme `<p>`, `<h1>`, `<span>`, des éléments de liste comme `<ul>`, `<ol>`, `<li>`, ou des éléments de conteneur comme `<div>`.
+
+3. **Attributs**: Les attributs fournissent des informations supplémentaires sur les éléments. Par exemple, dans `<img src="image.jpg" alt="Texte alternatif">`, `src` et `alt` sont des attributs.
+
+4. **Structure de base**: La structure de base d'une page HTML comprend généralement les éléments `<html>`, `<head>` et `<body>`. L'élément `<html>` englobe toute la page, `<head>` contient les métadonnées et `<body>` contient le contenu visible de la page.
+
+5. **Métadonnées**: Les métadonnées fournissent des informations sur la page, telles que le titre, l'encodage, la langue et la description. Elles sont définies à l'intérieur de l'élément `<head>`.
+
+6. **Commentaires**: Les commentaires permettent d'ajouter des annotations dans le code HTML sans qu'ils n'apparaissent dans le rendu de la page. Ils sont définis avec `<!-- commentaire -->`.
+
+7. **Hyperliens**: Les hyperliens permettent de créer des liens vers d'autres pages web ou des ressources. Ils sont définis avec l'élément `<a>` et l'attribut `href`.
+
+Ces concepts de base constituent les fondations sur lesquelles la structure et le contenu d'une page HTML sont construits.</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 3: Avancées</h2>
+                <button class="show-course-btn" onclick="showCourse(3)">Afficher le cours</button>
+                <div id="course-3" class="course-content">
+                    <p>Ce chapitre vous apprendra des techniques avancées et des méthodes pour améliorer vos compétences.</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 4: Les balise</h2>
+                <button class="show-course-btn" onclick="showCourse(4)">Afficher le cours</button>
+                <div id="course-4" class="course-content">
+                    <p>Balises HTML courantes et leur signification :
+
+1.   <ul>
+                        <li><strong>Balises</strong>: Les balises sont des éléments utilisés pour délimiter et structurer le contenu de la page. Elles sont généralement composées d'une balise d'ouverture, du contenu et d'une balise de fermeture. Par exemple : &lt;p&gt;Contenu du paragraphe&lt;/p&gt;.</li>
+                        <li><strong>Éléments</strong>: Les éléments sont constitués de balises et de leur contenu. Ils peuvent être des éléments de texte comme &lt;p&gt;, &lt;h1&gt;, &lt;span&gt;, des éléments de liste comme &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, ou des éléments de conteneur comme &lt;div&gt;.</li>
+                        <li><strong>Attributs</strong>: Les attributs fournissent des informations supplémentaires sur les éléments. Par exemple, dans &lt;img src="image.jpg" alt="Texte alternatif"&gt;, <code>src</code> et <code>alt</code> sont des attributs.</li>
+                        <li><strong>Structure de base</strong>: La structure de base d'une page HTML comprend généralement les éléments &lt;html&gt;, &lt;head&gt; et &lt;body&gt;. L'élément &lt;html&gt; englobe toute la page, &lt;head&gt; contient les métadonnées et &lt;body&gt; contient le contenu visible de la page.</li>
+                        <li><strong>Métadonnées</strong>: Les métadonnées fournissent des informations sur la page, telles que le titre, l'encodage, la langue et la description. Elles sont définies à l'intérieur de l'élément &lt;head&gt;.</li>
+                        </ul>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 5: Études de Cas</h2>
+                <button class="show-course-btn" onclick="showCourse(5)">Afficher le cours</button>
+                <div id="course-5" class="course-content">
+                    <p>Analyse de différentes études de cas pour comprendre l'application pratique des concepts.</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 6: Révisions</h2>
+                <button class="show-course-btn" onclick="showCourse(6)">Afficher le cours</button>
+                <div id="course-6" class="course-content">
+                    <p>Révision des concepts appris dans les chapitres précédents pour renforcer vos connaissances.</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 7: Tests</h2>
+                <button class="show-course-btn" onclick="showCourse(7)">Afficher le cours</button>
+                <div id="course-7" class="course-content">
+                    <p>Ce chapitre contient des tests pour évaluer vos connaissances et mesurer votre progression.</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 8: Projets</h2>
+                <button class="show-course-btn" onclick="showCourse(8)">Afficher le cours</button>
+                <div id="course-8" class="course-content">
+                    <p>Vous travaillerez sur des projets réels pour appliquer les connaissances théoriques de manière pratique.</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 9: Discussions</h2>
+                <button class="show-course-btn" onclick="showCourse(9)">Afficher le cours</button>
+                <div id="course-9" class="course-content">
+                    <p>Participez à des discussions et forums pour échanger des idées et obtenir des retours sur vos travaux.</p>
+                </div>
+            </div>
+            <div class="chapter">
+                <h2>Chapitre 10: Conclusion</h2>
+                <button class="show-course-btn" onclick="showCourse(10)">Afficher le cours</button>
+                <div id="course-10" class="course-content">
+                    <p>Conclusion du cours avec un résumé des points clés et des conseils pour continuer à apprendre.</p>
+                    <p> Abonné vous à la page Facebook pour en connaître plus ! </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Votre code JavaScript ici
         document.addEventListener('DOMContentLoaded', function() {
-            const passwordInput = document.getElementById('password');
-            const togglePasswordButton = document.getElementById('toggle-password');
-
-            togglePasswordButton.addEventListener('click', function() {
-                if (passwordInput.type === 'password') {
-                    passwordInput.type = 'text';
-                    togglePasswordButton.textContent = 'Cacher';
-                } else {
-                    passwordInput.type = 'password';
-                    togglePasswordButton.textContent = 'Afficher';
+            const subscribeMessage = document.getElementById('subscribe-message');
+            const courseContent = document.getElementById('course-content');
+            
+            subscribeMessage.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    setTimeout(function() {
+                        subscribeMessage.style.display = 'none';
+                        courseContent.style.display = 'block';
+                    }, 1000); // simulate a delay to check subscription
                 }
             });
-
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                const serviceID = 'service_g8w0cpq'; // Remplacez par votre service ID
-                const templateID = 'template_rp3hllb'; // Remplacez par votre template ID
-
-                const templateParams = {
-                    first_name: document.getElementById('first-name').value,
-                    last_name: document.getElementById('last-name').value,
-                    email: document.getElementById('email').value,
-                    password: document.getElementById('password').value,
-                    phone: document.getElementById('phone').value
-                };
-
-                emailjs.send(serviceID, templateID, templateParams)
-                    .then(function(response) {
-                        document.getElementById('contact-form').reset(); // Réinitialise le formulaire
-                        document.getElementById('confirmation-message').classList.remove('hidden'); // Affiche le message de confirmation
-                    }, function(error) {
-                        alert('Erreur lors de l\'envoi du message : ' + JSON.stringify(error));
-                    });
-            });
         });
+
+        function showCourse(chapterNumber) {
+            const course = document.getElementById(`course-${chapterNumber}`);
+            if (course.style.display === "none" || course.style.display === "") {
+                course.style.display = "block";
+            } else {
+                course.style.display = "none";
+            }
+        }
     </script>
 </body>
-    </html>
+</html>
